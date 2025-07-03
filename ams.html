@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aruvi Medical System</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f4f6f8;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(90deg, #37474f, #546e7a);
+      padding: 2rem 1rem;
+      text-align: center;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .header-top {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .header-top img.logo {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+    }
+
+    .header-top h1 {
+      margin: 0;
+      font-size: 2.8rem;
+      letter-spacing: 1px;
+      font-weight: 600;
+      color: #d32f2f;
+    }
+
+    header p {
+      color: #81c784;
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .watermark {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 20;
+      background: url('logo.png') no-repeat center center;
+      background-size: 300px;
+      width: 300px;
+      height: 300px;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 2rem 1rem;
+      background-color: #ffffff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      border-radius: 10px;
+      max-width: 1100px;
+      margin: 2rem auto;
+      gap: 1rem;
+      z-index: 1;
+      position: relative;
+    }
+
+    .contact div {
+      flex: 1 1 300px;
+      background-color: #f9f9f9;
+      padding: 0.7rem 1rem;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .contact div img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .products {
+      background: linear-gradient(to bottom, #ffffff 0%, #e3f2fd 100%);
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      max-width: 1300px;
+      margin: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 1px solid #e0e0e0;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .product-card h3 {
+      margin: 0;
+      padding: 1rem;
+      font-size: 1.1rem;
+      color: #455a64;
+    }
+
+    .footer {
+      background-color: #263238;
+      color: white;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.95rem;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (max-width: 768px) {
+      .header-top h1 {
+        font-size: 2rem;
+      }
+      .product-card img {
+        height: 160px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="watermark"></div>
+
+  <header>
+    <div class="header-top">
+      <img src="logo.png" alt="Logo" class="logo" />
+      <h1>Aruvi Medical System</h1>
+    </div>
+    <p>Solutions for Change</p>
+  </header>
+
+  <section class="contact">
+    <div><img src="https://img.icons8.com/ios-filled/50/user.png" alt="owner"> M. Elangovan (Proprietor)</div>
+    <div><img src="https://img.icons8.com/ios-filled/50/whatsapp.png" alt="whatsapp"> 8838275166</div>
+    <div><img src="https://img.icons8.com/ios-filled/50/phone.png" alt="phone"> 7904758413</div>
+    <div><img src="https://img.icons8.com/ios-filled/50/phone.png" alt="telephone"> 044-49585662</div>
+    <div><img src="https://img.icons8.com/ios-filled/50/email.png" alt="email"> aruvimedicalsystem76@gmail.com</div>
+    <div><img src="https://img.icons8.com/ios-filled/50/marker.png" alt="location"> No:9A, 1st Floor Yadhaval Street, Padi, Chennai - 600050</div>
+  </section>
+
+  <section class="products">
+    <!-- Product Cards Here (unchanged) -->
+    <div class="product-card"><img src="surgi.jpeg" alt="Surgical Instruments"><h3>Surgical Instruments</h3></div>
+    <div class="product-card"><img src="ec.jpg" alt="Energy Consumables"><h3>Energy Consumables</h3></div>
+    <div class="product-card"><img src="disp.jpeg" alt="Disposable Accessories"><h3>Disposable Accessories</h3></div>
+    <div class="product-card"><img src="suc.jpeg" alt="Suction Apparatus"><h3>Suction Apparatus</h3></div>
+    <div class="product-card"><img src="laps.jpeg" alt="Laparoscopic Instruments"><h3>Laparoscopic Instruments</h3></div>
+    <div class="product-card"><img src="multip.jpeg" alt="Multipara Monitors"><h3>Multipara Monitors</h3></div>
+    <div class="product-card"><img src="insuff.jpeg" alt="CO2 Insufflator"><h3>CO2 Insufflator</h3></div>
+    <div class="product-card"><img src="dopler.jpeg" alt="Fetal Monitor / Doppler"><h3>Fetal Monitor / Doppler</h3></div>
+    <div class="product-card"><img src="ecg.jpeg" alt="ECG Machine & Accessories"><h3>ECG Machine & Accessories</h3></div>
+    <div class="product-card"><img src="oxy.jpeg" alt="CPAP BiPAP O2 Concentrator"><h3>CPAP, BiPAP, O2 Concentrator</h3></div>
+    <div class="product-card"><img src="anes.jpeg" alt="Anaesthesia Equipments"><h3>Anaesthesia Equipments & Accessories</h3></div>
+    <div class="product-card"><img src="bp.jpg" alt="BP Apparatus / Pulse Oximeter"><h3>BP Apparatus / Pulse Oximeter</h3></div>
+    <div class="product-card"><img src="fur.jpeg" alt="Hospital Furniture"><h3>Hospital Furniture</h3></div>
+    <div class="product-card"><img src="neb.jpeg" alt="Nebulizers / Spirometer"><h3>Nebulizers / Spirometer</h3></div>
+  </section>
+
+  <footer class="footer">
+    &copy; 2025 Aruvi Medical System. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
