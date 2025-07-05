@@ -14,10 +14,9 @@
     }
 
     header {
-      background: linear-gradient(90deg, #37474f, #546e7a);
+      background: linear-gradient(90deg, #f8f9fa, #ffffff);
       padding: 2rem 1rem;
       text-align: center;
-      position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -39,10 +38,13 @@
 
     .header-top h1 {
       margin: 0;
-      font-size: 2.8rem;
-      letter-spacing: 1px;
-      font-weight: 600;
-      color: #d32f2f;
+      font-size: 3.5rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      background: linear-gradient(90deg, #ff5252, #ffca28);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     }
 
     header p {
@@ -56,7 +58,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      opacity: 20;
+      opacity: 0.05;
       background: url('logo.png') no-repeat center center;
       background-size: 300px;
       width: 300px;
@@ -76,8 +78,8 @@
       max-width: 1100px;
       margin: 2rem auto;
       gap: 1rem;
-      z-index: 1;
       position: relative;
+      z-index: 1;
     }
 
     .contact div {
@@ -116,6 +118,7 @@
       text-align: center;
       transition: all 0.3s ease;
       border: 1px solid #e0e0e0;
+      cursor: pointer;
     }
 
     .product-card:hover {
@@ -125,8 +128,9 @@
 
     .product-card img {
       width: 100%;
-      height: 200px;
-      object-fit: cover;
+      height: 220px;
+      object-fit: contain;
+      background-color: #fff;
       transition: transform 0.3s ease;
     }
 
@@ -153,9 +157,33 @@
       z-index: 1;
     }
 
+    /* Lightbox styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      cursor: zoom-out;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+      object-fit: contain;
+      background-color: white;
+    }
+
     @media (max-width: 768px) {
       .header-top h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
       }
       .product-card img {
         height: 160px;
@@ -176,21 +204,19 @@
   </header>
 
   <section class="contact">
-    <div><img src="https://img.icons8.com/ios-filled/50/user.png" alt="owner"> M. Elangovan (Proprietor)</div>
-    <div><img src="https://img.icons8.com/ios-filled/50/whatsapp.png" alt="whatsapp"> 8838275166</div>
+    <div><img src="https://img.icons8.com/ios-filled/50/user.png" alt="owner"> M. Elangovan</div>
     <div><img src="https://img.icons8.com/ios-filled/50/phone.png" alt="phone"> 7904758413</div>
     <div><img src="https://img.icons8.com/ios-filled/50/phone.png" alt="telephone"> 044-49585662</div>
     <div><img src="https://img.icons8.com/ios-filled/50/email.png" alt="email"> aruvimedicalsystem76@gmail.com</div>
-    <div><img src="https://img.icons8.com/ios-filled/50/marker.png" alt="location"> No:9A, 1st Floor Yadhaval Street, Padi, Chennai - 600050</div>
+    <div><img src="https://img.icons8.com/ios-filled/50/marker.png" alt="location"> F2 SDBC UDHAYAM APPARTMENTS, JASWANTH NAGAR PHASE II, 2nd STREET, MOGAPPAIR WEST, CHENNAI - 600037</div>
   </section>
 
   <section class="products">
-    <!-- Product Cards Here (unchanged) -->
-    <div class="product-card"><img src="surgi.jpeg" alt="Surgical Instruments"><h3>Surgical Instruments</h3></div>
-    <div class="product-card"><img src="ec.jpg" alt="Energy Consumables"><h3>Energy Consumables</h3></div>
+    <div class="product-card"><img src="surgiins.jpg" alt="Surgical Instruments"><h3>Surgical Instruments</h3></div>
+    <div class="product-card"><img src="labequip.jpg" alt="Lab Equipments"><h3>Lab Equipments</h3></div>
     <div class="product-card"><img src="disp.jpeg" alt="Disposable Accessories"><h3>Disposable Accessories</h3></div>
     <div class="product-card"><img src="suc.jpeg" alt="Suction Apparatus"><h3>Suction Apparatus</h3></div>
-    <div class="product-card"><img src="laps.jpeg" alt="Laparoscopic Instruments"><h3>Laparoscopic Instruments</h3></div>
+    <div class="product-card"><img src="lapsco.jpg" alt="Laparoscopic Instruments"><h3>Laparoscopic Instruments</h3></div>
     <div class="product-card"><img src="multip.jpeg" alt="Multipara Monitors"><h3>Multipara Monitors</h3></div>
     <div class="product-card"><img src="insuff.jpeg" alt="CO2 Insufflator"><h3>CO2 Insufflator</h3></div>
     <div class="product-card"><img src="dopler.jpeg" alt="Fetal Monitor / Doppler"><h3>Fetal Monitor / Doppler</h3></div>
@@ -198,13 +224,36 @@
     <div class="product-card"><img src="oxy.jpeg" alt="CPAP BiPAP O2 Concentrator"><h3>CPAP, BiPAP, O2 Concentrator</h3></div>
     <div class="product-card"><img src="anes.jpeg" alt="Anaesthesia Equipments"><h3>Anaesthesia Equipments & Accessories</h3></div>
     <div class="product-card"><img src="bp.jpg" alt="BP Apparatus / Pulse Oximeter"><h3>BP Apparatus / Pulse Oximeter</h3></div>
-    <div class="product-card"><img src="fur.jpeg" alt="Hospital Furniture"><h3>Hospital Furniture</h3></div>
+    <div class="product-card"><img src="furnit.png" alt="Hospital Furniture"><h3>Hospital Furniture</h3></div>
     <div class="product-card"><img src="neb.jpeg" alt="Nebulizers / Spirometer"><h3>Nebulizers / Spirometer</h3></div>
   </section>
 
   <footer class="footer">
     &copy; 2025 Aruvi Medical System. All Rights Reserved.
   </footer>
+
+  <!-- Lightbox container -->
+  <div class="lightbox" id="lightbox">
+    <img id="lightbox-img" src="" alt="Preview">
+  </div>
+
+  <!-- Lightbox JavaScript -->
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+
+    document.querySelectorAll('.product-card img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = "flex";
+        lightboxImg.src = img.src;
+      });
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.style.display = "none";
+      lightboxImg.src = "";
+    });
+  </script>
 
 </body>
 </html>
